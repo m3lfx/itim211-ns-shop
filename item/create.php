@@ -5,6 +5,7 @@ include('../includes/config.php');
 
 // var_dump($_SESSION);
 // unset($_SESSION);
+
 ?>
 
 <body>
@@ -39,8 +40,14 @@ include('../includes/config.php');
 
                 <input type="number" class="form-control" id="qty" placeholder="1" name="quantity" value="<?php echo $_SESSION['qty']; ?>" />
                 <input class="form-control" type="file" name="img_path" /><br />
+                <small><?php 
+                if (isset($_SESSION['imageError'])) {
+                    echo $_SESSION['imageError'];
+                    unset($_SESSION['imageError']);
+                }
+                ?></small>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" name="submit">Submit</button>
             <a href="index.php" role="button" class="btn btn-secondary">Cancel</a>
         </form>
     </div>
