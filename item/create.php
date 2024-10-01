@@ -31,6 +31,6 @@ include('../includes/config.php');
             <a href="index.php" role="button" class="btn btn-secondary">Cancel</a>
         </form>
     </div>
-</body>
-
-</html>
+<?php
+include('../includes/footer.php');
+?>

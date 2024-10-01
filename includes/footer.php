@@ -1,6 +1,6 @@
 <?php 
 $date = date('Y-m-d');
-print "<p>copyright</p>";
+print "<p>copyright {$date}</p>";
 ?>
 
 
