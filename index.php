@@ -1,10 +1,9 @@
 <?php
 session_start();
 include('./includes/header.php');
-
 include('./includes/config.php');
 
-$sql = "SELECT item_id, description, img_path, sell_price FROM item ORDER BY item_id ASC";
+$sql = "SELECT i.item_id AS itemId, description, img_path, sell_price FROM item i INNER JOIN stock s ON i.item_id = s.item_id ORDER BY i.item_id ASC";
 
 $results = mysqli_query($conn, $sql);
 if ($results) {
@@ -26,7 +25,7 @@ if ($results) {
         <input type="number" size="2" maxlength="2" name="item_qty" value="1" />
     </label>
     </fieldset>
-    <input type="hidden" name="item_id" value="{$row['item_id']}" />
+    <input type="hidden" name="item_id" value="{$row['itemId']}" />
     <input type="hidden" name="type" value="add" />
     
     <div align="center"><button type="submit" class="add_to_cart">Add</button></div>
