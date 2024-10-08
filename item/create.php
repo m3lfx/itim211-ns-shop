@@ -14,7 +14,17 @@ include('../includes/config.php');
         <form method="POST" action="store.php" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="name">Item Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter item name" name="description" value="<?php echo $_SESSION['desc']; ?>" />
+                <input type="text" 
+                class="form-control" 
+                id="name" 
+                placeholder="Enter item name" 
+                name="description" 
+                value="<?php 
+                
+                if (isset($_SESSION['desc']))
+                    echo $_SESSION['desc']; 
+                ?>" />
+                
                 <small><?php 
                 if (isset($_SESSION['descError'])) {
                     echo $_SESSION['descError'];
