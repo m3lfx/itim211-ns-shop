@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
         $_SESSION['email'] = $email;
         $_SESSION['user_id'] = $user_id;
         $_SESSION['role'] = $role;
-        header("Location: profile.php");
+        header("Location: ../index.php");
     } else {
         $_SESSION['message'] = 'wrong email or password';
     }

@@ -50,6 +50,9 @@
           echo "<div class='navbar-nav ms-auto'>
                         <a href='http://{$_SERVER['SERVER_NAME']}/itim211-ns-shop/user/login.php'  class='nav-item nav-link'>Login</a></div>";
         } else {
+            echo "<li class='nav-item'>
+           <p>{$_SESSION['email']}</p>
+          </li>";
           echo "<div class='navbar-nav ms-auto'>
                         <a href='http://{$_SERVER['SERVER_NAME']}/itim211-ns-shop/user/logout.php'  class='nav-item nav-link'>Logout</a></div>";
         }
