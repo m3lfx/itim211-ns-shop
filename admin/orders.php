@@ -7,6 +7,9 @@ include('../includes/config.php');
 // $sql = "SELECT o.orderinfo_id as orderId, SUM(i.sell_price * ol.quantity) as total FROM orderinfo o INNER JOIN orderline ol using (orderinfo_id) INNER JOIN item i USING (item_id)
 // GROUP BY o.orderinfo_id";
 
+//order details
+
+
 $sql = "SELECT * FROM `salesperorder` ORDER BY total DESC";
 $result = mysqli_query($conn, $sql);
 $itemCount = mysqli_num_rows($result);
@@ -22,7 +25,7 @@ $itemCount = mysqli_num_rows($result);
             echo "<td>{$row['total']}</td>";
             
 
-            echo "<td><a href='show.php?id={$row['orderId']}'><i class='fa-regular fa-eye' style='color: blue'></i></a></td>";
+            echo "<td><a href='orderDetails.php?id={$row['orderId']}'><i class='fa-regular fa-eye' style='color: blue'></i></a></td>";
             echo "</tr>";
         }
         ?>
