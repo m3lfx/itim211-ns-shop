@@ -8,7 +8,7 @@ include('./includes/config.php');
 <h2>Your Shopping Cart</h2>
 
 <?php
-// print_R($_SESSION);
+print_R($_SESSION);
 if(isset($_SESSION["cart_products"]) && count($_SESSION["cart_products"]) > 0) {
     echo '<div class="cart-view-table-front" id="view-cart">';
     echo '<h3>Your Shopping Cart</h3>';
@@ -36,6 +36,7 @@ if(isset($_SESSION["cart_products"]) && count($_SESSION["cart_products"]) > 0) {
     echo '</td>';
     echo '</tbody>';
     echo '</table>';
+    echo "</form>";
     echo '</div>';
 }
 $sql = "SELECT i.item_id AS itemId, description, img_path, sell_price FROM item i INNER JOIN stock s USING (item_id)  ORDER BY i.item_id ASC";
