@@ -31,12 +31,18 @@
               Dropdown
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="../item/index.php">item</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <?php if($_SESSION['role'] === 'admin') {
+                echo `<li><a class="dropdown-item" href="../item/index.php">item</a></li>`;
+                echo `<li><a class="dropdown-item" href="../admin/orders.php">Orders</a></li>`;
+              }
+              
+              ?>
+              
+              <li><a class="dropdown-item" href="user/myorders.php">My Orders</a></li>
               <li>
                 <hr class="dropdown-divider">
               </li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              
             </ul>
           </li>
 
