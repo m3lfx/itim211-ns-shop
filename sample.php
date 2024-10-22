@@ -107,9 +107,106 @@ date_default_timezone_set('Asia/Manila');
 // $full_name = ucwords( strtolower($full_name) );
 // print $full_name;
 
-$start_date = "2000-!01-12";
-$date_array = explode("-!", $start_date);
-print $date_array[0] ;
-print $date_array[1] ;
-print $date_array[2];;
-print $start_date;
+// $start_date = "2000-!01-12";
+// $date_array = explode("-!", $start_date);
+// print $date_array[0] ;
+// print $date_array[1] ;
+// print $date_array[2];;
+// print $start_date;
+
+// print "<pre>\n";
+// print preg_match("/aa/", "aardvark advocacy", $array) . "\n";
+// print_r( $array );
+// print "</pre>\n";
+
+// if ( preg_match("/a*/","aaaaazbcda", $array) ) {
+//     print "<pre>\n";
+//     print_r( $array );
+//     print "</pre>\n";
+//     }
+
+// $text = "pot";
+// if (preg_match( "/p.?t/", $text, $array ) ) {
+// print "<pre>\n";
+// print_r( $array );
+// print "</pre>\n";
+// }
+
+// $text = "poz post pat patenz";
+// if (preg_match("/^p.+z$/", $text, $array)) {
+//     print "<pre>\n";
+//     print_r($array);
+//     print "</pre>\n";
+// }
+
+// if (preg_match("/[A-Za-z_347]+/", "AB dkfd773sxFF", $array)) {
+//     print "<pre>\n";
+//     print_r($array);
+//     print "</pre>\n";
+// }
+
+// if ( preg_match("/[^A-Z347]+/","AB dkfd773sxFF", $array) ) {
+//     print "<pre>\n";
+//     print_r( $array );
+//     print "</pre>\n";
+//     }
+
+// if ( preg_match("/^p[^a-z347]+/","pB dkfd773sxFF", $array) ) {
+//     print "<pre>\n";
+//     print_r( $array );
+//     print "</pre>\n";
+//     }
+
+// $text = "pot post pat patent";
+// if (preg_match("/\bp\w+t\b/", $text, $array)) {
+//     print "<pre>\n";
+//     print_r($array);
+//     print "</pre>\n";
+   
+// }
+
+// $test = "Whatever you do, don't panic!";
+// if ( preg_match( "/(don't)\s+(panic)/", $test, $array ) ) {
+// print "<pre>\n";
+// print_r( $array );
+// print "</pre>\n";
+// }
+
+// $test = "158.152.55.35";
+// if ( preg_match( "/(\d+)\.(\d+)\.(\d+)\.(\d+)/", $test, $array ) ) {
+// print "<pre>\n";
+// print_r( $array );
+// print "</pre>\n";
+// }
+
+// $test = "TUPT-23-0909";
+// if ( preg_match( "/[A-Z]+-\d{2}-\d{4}/", $test, $array ) ) {
+// print "<pre>\n";
+// print_r( $array );
+// print "</pre>\n";
+// }
+
+// $test = "www.example.co.uk";
+// if ( preg_match( "/www\.example(\.com|\.co\.uk)/", $test, $array ) ) {
+// print "it is a $array[1] domain<br/>";
+// }
+
+// $text = "I sell pots, plants, pistachios, pianos and parrots";
+// if ( preg_match( "/\bp\w+s\b/", $text, $array ) ) {
+// print "<pre>\n";
+// print_r( $array );
+// print "</pre>\n";
+// }
+
+// $text = "I sell pots, plants, pistachios, pianos and parrots potatos";
+// if ( preg_match_all( "/\bp\w+s\b/", $text, $array ) ) {
+// print "<pre>\n";
+// print_r( $array );
+// print "</pre>\n";
+// }
+
+$text = "01-05-99, 01-10-99, 01-03-00";
+preg_match_all( "/(\d+)-(\d+)-(\d+)/", $text, $array );
+print "<pre>\n";
+print_r( $array );
+print "</pre>\n";
