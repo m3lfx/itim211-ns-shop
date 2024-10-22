@@ -205,8 +205,44 @@ date_default_timezone_set('Asia/Manila');
 // print "</pre>\n";
 // }
 
-$text = "01-05-99, 01-10-99, 01-03-00";
-preg_match_all( "/(\d+)-(\d+)-(\d+)/", $text, $array );
+// $text = "01-05-99, 01-10-99, 01-03-00";
+// preg_match_all( "/(\d+)-(\d+)-(\d+)/", $text, $array );
+// print "<pre>\n";
+// print_r( $array );
+// print "</pre>\n";
+
+// $test = "Our Secretary, Sarah Williams is pleased to welcome you.";
+// print preg_replace("/Sarah Williams/", "Rev. P.W. Goodchild", $test);
+
+// $text = "name: matt\noccupation: coder\neyes: blue\n";
+// if ( preg_match_all( "/^\w+:\s+(.*)$/m", $text, $array ) ) {
+// print "<pre>\n";
+// print_r( $array );
+// print "</pre>\n";
+// }
+
+// $text = "start with this line\nand you will reach\na conclusion in the end\n";
+// if ( preg_match( "/^(\w+).*?(\w+)$/s", $text, $array ) ) {
+// print "<pre>\n";
+// print_r( $array );
+// print "</pre>\n";
+// }
+
+$text = "apples, oranges, peaches and grapefruit";
+$fruitarray = preg_split( "/,| and /", $text );
 print "<pre>\n";
-print_r( $array );
+print_r( $fruitarray );
 print "</pre>\n";
+
+$dates = "3/18/03<br />\n7/22/04";
+$dates = preg_replace_callback( "/([0-9]+)\/([0-9]+)\/([0-9]+)/",
+function ($match) {
+print_r($match);
+$year = ($match[3] < 70 ) ? $match[3]+2000 : $match[3];
+
+// echo $year ;
+$time = mktime( 0,0,0, $match[1], $match[2], $match[3]);
+return date("l d F Y", $time);
+// return null;
+}, $dates);
+print $dates;
