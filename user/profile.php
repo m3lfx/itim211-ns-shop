@@ -3,8 +3,9 @@ session_start();
 include("../includes/header.php");
 include("../includes/config.php");
 if (isset($_POST['submit'])) {
+    // echo htmlentities($_POST['fname']);
     $lname = trim($_POST['lname']);
-    $fname = trim($_POST['fname']);
+    $fname = trim(strip_tags($_POST['fname']));
     $title = trim($_POST['title']);
     $address = trim($_POST['address']);
     $town = trim($_POST['town']);

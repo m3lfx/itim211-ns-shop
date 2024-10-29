@@ -40,6 +40,8 @@
               
               <li><a class="dropdown-item" href="user/myorders.php">My Orders</a></li>
               <li>
+              <li><a class="dropdown-item" href="user/profile.php">My Profile</a></li>
+              <li>
                 <hr class="dropdown-divider">
               </li>
               

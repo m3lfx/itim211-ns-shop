@@ -5,7 +5,7 @@ include("../includes/header.php");
 
 $email = trim($_POST['email']);
 $password = trim($_POST['password']);
-if(!preg_match("/^\w+[-\.]\+@w+[-\.]+[\w-]{2,}$/g", $email)) {
+if(!preg_match("/^\w+@\w+\.\w+/", $email)) {
     $_SESSION['message'] = 'email invalid format';
     header("Location: register.php");
     exit();
